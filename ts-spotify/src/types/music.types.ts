@@ -1,27 +1,27 @@
-type ID = string
-type Duration = number
-type ImageUrl = string
+export type TId = string
+export type TDuration = number
+export type TImageUrl = string
 
 type isPublished = boolean
 type artist = null | string
 type album = undefined | string
 
 export type TStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
-interface IBase {
+export interface IBase {
     id: ID,
     createdAt: string,
     updatedAt: string
 }
 
 export interface IArtist extends IBase{
-    id: ID,
+    id: TId,
     name: string,
-    image: ImageUrl,
+    image: TImageUrl,
     isVerified:boolean
 
 }
 export interface Itrack extends IBase { 
-    id: ID,
+    id: TId,
     artist: IArtist,
     title: string,
     duration: number,
