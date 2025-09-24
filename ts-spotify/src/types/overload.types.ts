@@ -1,13 +1,13 @@
 import type { IArtist, Itrack } from "./music.types";
 import type { IPlayList } from "./playlist.types";
-
+ 
 function spotifyApi(endpoint: 'track', id:string,): Promise<Itrack>
 function spotifyApi(endpoint: 'artist', id:string,): Promise<IArtist>
 function spotifyApi(endpoint: 'playlist', id:string,): Promise<IPlayList>
 function spotifyApi(endpoint: 'string', id:string,): Promise<unknown>{
     return fetch(`https://api.spotify.com/v1/${endpoint}s/${id}`).then(res => res.json())
 }
-
+const artist = await spotifyApi('artist', '123')
 // Перегрузка в TypeScript — это механизм, который позволяет определить несколько сигнатур функций с одним и тем же именем, но разными типами или количеством аргументов. Это не увеличивает нагрузку во время выполнения, а служит для статической проверки типов компилятором TypeScript, делая код более понятным и безопасным, документируя, как функция должна вызываться. 
 // Принцип работы
 // Декларации перегрузки: Вы объявляете несколько функций с одинаковым именем и разными параметрами (которые могут быть числами, строками, объектами и т.д.).

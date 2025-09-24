@@ -8,5 +8,5 @@ export interface IPlayerState {
     volume: number,
     currentTime: number,
     repeatMode: 'off' | 'one' | 'all',
-    isSuffling: boolean
+    isShuffling: boolean
 }

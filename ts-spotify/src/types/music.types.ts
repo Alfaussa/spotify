@@ -26,7 +26,7 @@ export interface Itrack extends IBase {
     title: string,
     duration: number,
     isPublished: boolean,
-
+    audioUrl: string
 }
 
 
